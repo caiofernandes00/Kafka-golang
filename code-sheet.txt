@@ -1,0 +1,9 @@
+kafka-topics --create --topic=test --bootstrap-server=localhost:9092 --partitions=3
+kafka-topics --list --bootstrap-server=localhost:9092
+kafka-topics --bootstrap-server=localhost:9092 --topic=test --describe
+
+# Consume and Produce messages
+kafka-console-consumer --bootstrap-server=localhost:9092 --topic=test --from-beginning --group=x
+kafka-console-producer --bootstrap-server=localhost:9092 --topic=test
+
+kafka-consumer-groups --bootstrap-server=localhost:9092 --group=x --describe
